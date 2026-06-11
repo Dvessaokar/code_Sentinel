@@ -41,46 +41,6 @@ pip install customtkinter httpx pyinstaller tkinterdnd2
 
 ---
 
-## Running from source
-
-```bash
-python codesentinel.py
-```
-
----
-
-## Building the executable
-
-### Windows / macOS / Linux — folder distribution (recommended)
-```bash
-pyinstaller codesentinel.spec
-# Output: dist/CodeSentinel/CodeSentinel.exe   (Windows)
-#         dist/CodeSentinel/CodeSentinel        (macOS / Linux)
-```
-
-### Single-file executable (slower startup, easier distribution)
-Edit `codesentinel.spec` and change:
-```python
-onefile = True   # set this in the EXE() call
-```
-Then:
-```bash
-pyinstaller --onefile --windowed codesentinel.py
-```
-
-### macOS .app bundle
-```bash
-pyinstaller --windowed --name CodeSentinel \
-    --add-data "$(python -c 'import customtkinter; import os; print(os.path.dirname(customtkinter.__file__))'):customtkinter" \
-    codesentinel.py
-```
-
-### Adding an icon
-Place `assets/icon.ico` (Windows) or `assets/icon.icns` (macOS) in the project folder,
-then uncomment the `icon=` line in `codesentinel.spec`.
-
----
-
 
 ## Usage
 
