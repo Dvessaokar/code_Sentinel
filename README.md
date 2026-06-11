@@ -81,20 +81,6 @@ then uncomment the `icon=` line in `codesentinel.spec`.
 
 ---
 
-## Enabling native drag-and-drop
-
-Install `tkinterdnd2`:
-```bash
-pip install tkinterdnd2
-```
-
-Then replace the `__init__` base class in `codesentinel.py`:
-```python
-from tkinterdnd2 import TkinterDnD
-class CodeSentinelApp(TkinterDnD.Tk):   # replaces ctk.CTk
-```
-
----
 
 ## Usage
 
